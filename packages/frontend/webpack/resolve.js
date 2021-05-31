@@ -1,8 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  // extensions: ['.js', '.vue', '.json', '.scss'],
-
   alias: {
     'vue$': 'vue/dist/vue.esm.js',
     '@components': path.resolve(__dirname, '../src/js/components'),

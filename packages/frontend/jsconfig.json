@@ -1,0 +1,21 @@
+{
+  "allowJs": true,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["./src/js/components/*"],
+      "@elements/*": ["./src/js/components/elements/*"],
+      "@filters/*": ["./src/js/filters/*"],
+      "@js/*": ["./src/js/*"],
+      "@layouts/*": ["./src/js/components/layouts/*"],
+      "@pages/*": ["./src/js/components/pages/*"],
+      "@schema/*": ["./src/js/schema/*"],
+      "@shared/*": ["./src/js/components/shared/*"],
+      "@store/*": ["./src/js/store/*"],
+      "@styles/*": ["./src/scss/*"],
+      "@vendor/*": ["./src/js/vendor/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

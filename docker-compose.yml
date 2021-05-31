@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:alpine
+    working_dir: /var/www/html
+    volumes:
+      - './docker/nginx:/etc/nginx/conf.d:cached'
+      - './packages/frontend:/var/www/html:cached'
+    ports:
+      - '80:80'
+    depends_on:
+      - frontend
+    links:
+      - frontend
+
+  frontend:
+    container_name: frontend
+    image: node:12
+    command: >
+      bash -c "npm i &&
+      npx webpack-dev-server --hot --inline --config webpack/config.js"
+    working_dir: /var/www/html
+    volumes:
+      - './packages/frontend:/var/www/html:cached'
+    ports:
+      - '8080:8080'
+    environment:
+      NODE_ENV: development
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0

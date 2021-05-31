@@ -22,6 +22,7 @@ module.exports = [
   // copy static files to web folder
   new CopyWebpackPlugin({
     patterns: [
+      { from: './src/favicon.ico', to: './favicon.ico' },
       { from: './src/img', to: './img' },
     ],
   }),

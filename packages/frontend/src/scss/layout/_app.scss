@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: $body-font;
+  font-size: $body-font-size;
+  color: $body-font-colour;
+}
+
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 30px;
+}
+
+.page {
+  padding: 30px 0;
+}
+
+a {
+  color: #222;
+
+  &.active {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "env": {
+    "node": true,
+    "browser": true,
+    "jest": true
+  },
+  "extends": ["airbnb-base"],
+  "rules": {
+    "no-param-reassign": [
+      "error",
+      {
+        "props": true,
+        "ignorePropertyModificationsFor": ["state", "acc", "e", "ctx", "req", "request", "res", "response", "$scope"]
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "import/no-unresolved": ["error", { "ignore": ["^@"] }],
+    "indent": ["error", 2, {"MemberExpression": "off"}],
+    "max-len": ["error", { "code": 120 }],
+    "comma-dangle": ["error", "always-multiline"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"]
+  },
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    },
+    "import/extensions": [".js", ".json"],
+    "import/ignore": ["node_modules"]
+  }
+}

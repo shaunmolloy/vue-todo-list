@@ -29,6 +29,9 @@ module.exports = class BaseRepository {
    */
   async deleteById(id) {
     const model = await this.findById(id);
+    if (model === null) {
+      throw new Error('Not found');
+    }
     return model.destroy();
   }
 
@@ -38,6 +41,9 @@ module.exports = class BaseRepository {
    */
   async updateById(id, object) {
     const model = await this.findById(id);
+    if (model === null) {
+      throw new Error('Not found');
+    }
     Object.keys(object).forEach((key) => {
       model[key] = object[key];
     });

@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database');
+const TodoList = require('./TodoList');
 
 const TodoListTask = sequelize.define('TodoListTask', {
   name: DataTypes.STRING,
@@ -10,5 +11,7 @@ const TodoListTask = sequelize.define('TodoListTask', {
   updatedAt: 'updated',
   underscored: true,
 });
+
+TodoListTask.belongsTo(TodoList, { foreignKey: 'list_id' });
 
 module.exports = TodoListTask;

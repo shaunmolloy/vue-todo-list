@@ -29,3 +29,31 @@ services:
     environment:
       NODE_ENV: development
       WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+
+  backend:
+    container_name: backend
+    image: node:12
+    command: bash -c "npm i && npm start"
+    working_dir: /var/www/html
+    volumes:
+      - './packages/backend:/var/www/html:cached'
+    ports:
+      - '8000:8000'
+
+  mysql:
+    container_name: mysql
+    image: 'mysql:5.6'
+    volumes:
+      - './docker/db:/docker-entrypoint-initdb.d'
+      - 'db:/var/lib/mysql'
+    ports:
+      - '3306:3306'
+    tmpfs:
+      - '/tmp:rw'
+    environment:
+      - MYSQL_DATABASE=todo_list
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=no
+
+volumes:
+  db:

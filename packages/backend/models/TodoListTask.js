@@ -8,6 +8,7 @@ const TodoListTask = sequelize.define('TodoListTask', {
   tableName: 'todo_list_task',
   createdAt: 'created',
   updatedAt: 'updated',
+  underscored: true,
 });
 
 module.exports = TodoListTask;

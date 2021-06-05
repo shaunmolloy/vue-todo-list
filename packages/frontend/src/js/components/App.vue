@@ -19,12 +19,16 @@ export default {
   components: {
     VHeader,
     VFooter,
-  }
+  },
+
+  created() {
+    return this.$store.dispatch('init');
+  },
 };
 </script>
 
 <style lang="scss">
 .content {
-  min-height: calc(100vh - 239px)
+  min-height: calc(100vh - 241px)
 }
 </style>

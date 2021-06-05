@@ -3,8 +3,7 @@
     <div class="container">
       <img class="logo" alt="logo" src="/img/logo.png">
       <ul>
-        <li>Todo Lists:</li>
-        <li><router-link to="/">Main</router-link></li>
+        <li><router-link to="/">My Tasks</router-link></li>
       </ul>
       <div />
     </div>
@@ -13,8 +12,6 @@
 
 <style lang="scss">
 header {
-  background: #f3f3f3;
-
   ul {
     margin: 0;
     padding: 0;
@@ -33,6 +30,11 @@ header {
 
   .logo {
     height: 40px;
+    margin: 0 20px;
+  }
+
+  a {
+    font-size: 18px;
   }
 }
 </style>

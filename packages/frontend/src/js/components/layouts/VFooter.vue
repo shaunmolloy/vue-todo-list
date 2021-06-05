@@ -8,7 +8,6 @@
 
 <style lang="scss">
 footer {
-  background: #f3f3f3;
   text-align: center;
 }
 </style>

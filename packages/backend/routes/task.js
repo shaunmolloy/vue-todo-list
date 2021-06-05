@@ -13,7 +13,6 @@ routes.get('/', (req, res) => {
 
 // add a task
 routes.post('/', (req, res) => {
-  console.log(req.body);
   const { name, list_id } = req.body;
   repository.create({ name, list_id })
     .then((task) => res.json({ ...jsonSuccess, data: task }))
@@ -31,7 +30,7 @@ routes.delete('/:id', (req, res) => {
 // update a task
 routes.put('/:id', (req, res) => {
   const { id } = req.params;
-  const task = { name: req.body.name, done: req.body.done };
+  const task = { name: req.body.name, status: req.body.status };
   repository.updateById(id, task)
     .then(() => res.json({ ...jsonSuccess }))
     .catch((err) => res.status(400).json({ ...jsonError, message: err.message }));

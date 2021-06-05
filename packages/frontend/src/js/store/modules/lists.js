@@ -36,7 +36,10 @@ const storeMutations = {
 const storeActions = {
   async getLists({ commit }) {
     return listClient.getLists()
-      .then((response) => commit(SET_LISTS, response.data));
+      .then((response) => {
+        commit(SET_LISTS, response.data);
+        return response.data;
+      });
   },
 
   async addList({ commit }, payload) {

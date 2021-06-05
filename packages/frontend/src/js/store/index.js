@@ -27,8 +27,15 @@ export default new Vuex.Store({
       if (getters['loaded']) {
         return;
       }
-      await dispatch('lists/getLists');
-      await dispatch('tasks/getTasks');
+
+      // add new list
+      const lists = await dispatch('lists/getLists');
+      if (lists.length === 0) {
+        await dispatch('lists/addList', { name: 'My Tasks' });
+      } else {
+        await dispatch('tasks/getTasks');
+      }
+
       commit(SET_LOADED, true);
     },
   },

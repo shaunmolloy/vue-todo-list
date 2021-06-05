@@ -9,17 +9,53 @@ body {
   width: 100%;
   max-width: 1400px;
   margin: auto;
-  padding: 30px;
+  padding: 30px 0;
 }
 
 .page {
-  padding: 30px 0;
+  padding: 30px;
+  background: #f3f3f3;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+
+  & > .container {
+    padding: 0;
+  }
 }
 
 a {
   color: #222;
+  text-decoration: none;
 
   &.active {
     font-weight: bold;
+  }
+}
+
+.btn {
+  padding: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+
+  &--primary {
+    background: #66aa00;
+    color: #fff;
+
+    &:hover {
+      background: darken(#66aa00, 10%);
+    }
+  }
+
+  &--secondary {
+    background: #fff;
+    color: #222;
+    box-shadow: 0 0 1px 1px #bbb;
+  }
+
+  &--red {
+    background: #bb0000;
+    color: #fff;
   }
 }

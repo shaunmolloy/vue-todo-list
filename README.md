@@ -29,31 +29,12 @@ On first load, the app will make some API calls to fetch lists and tasks, and th
 is stored in local storage. Upon refresh the app doesn't need to make any API calls,  
 and it restores the app data from local storage.
 
-The following from the task has been covered:
+The following have been covered:
 
 - ~~Add new todos to the list~~  
 - ~~Mark todos as complete~~  
 - ~~Delete todos from the list~~  
 - ~~Bonus: Any delightful UI touches~~
 - Filter by all/active/complete todos
-- Clear all completed todos  
-- Out of scope: User Authentication  
-
-### Time Limit
-
-I spent around 1 full day, to build the following:
-
-- Docker services
-  - nginx (reverse proxy for frontend/backend)
-  - frontend
-  - backend
-  - mysql
-- Backend
-- Frontend
-
-### What would I change?
-
-For what's asked in the task, a 2-hour time limit is really ambitious. This could be split  
-into 2 separate tests, one for frontend, and one for backend. The appropriate test could then  
-be provided based on the role and candidate.
-
+- Clear all completed todos
+- Out of scope: User Authentication
